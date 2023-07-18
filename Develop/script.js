@@ -16,6 +16,11 @@ $( function() {
       $(this).addClass("present");
     }
   });
+
+  $( ".saveBtn" ).on("click",function(){
+    console.log($(this).siblings("textarea").val());
+    var textAreaValue = ($(this).siblings("textarea").val())
+  })
 } );
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
