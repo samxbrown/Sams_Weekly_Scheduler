@@ -5,7 +5,16 @@ $( function() {
   $( "#currentDay" ).text(dayjs().format("MM/DD/YYYY"));
   var currentHour = dayjs().hour();
   $("textarea").each(function(){
-    console.log(this)
+    var textAreaId = $(this).attr("id")
+    if(currentHour > textAreaId){
+      $(this).addClass("past");
+    }
+    if(currentHour < textAreaId){
+      $(this).addClass("future");
+    }
+    if(currentHour == textAreaId){
+      $(this).addClass("present");
+    }
   });
 } );
   // TODO: Add a listener for click events on the save button. This code should
